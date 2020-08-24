@@ -1,20 +1,48 @@
 extends layout
 
 block content
-    h1 Ingredientes    
+    br
+    h3 Ingredietes por Total de masa
+    br
+    br  
     form(action="post")
-        label(for='masa') Elija masa:
-            select#masa(name='tipo masa')
-                option(value='vienna') Vienna
-                option(value='brioche') Brioche
-                option(value='muffin') Muffin
-                option(value='pizza') Pizza
-        br
-        label(for='gramo') Gramos de bollo:
-        input#fname(type='text' name='gramo')
-        br
-        label(for='cantidad') Cantidad de bollo:
-        input#fname(type='text' name='cantidad')
-        br
-        input(type="submit" value="Sumar")
-        input(type="submit" value="Calcular")
+        label(for='tipoMasa') Elija masa:
+            select#tipoMasa(name='tipoMasa')
+                option(value='viena')= tiposMasa[0].tipo
+                option(value='brioche')= tiposMasa[1].tipo
+                option(value='muffin')= tiposMasa[2].tipo
+                option(value='pizza')= tiposMasa[3].tipo
+
+    label(for='gramosMasa') Gramos de masa:
+    input#fname(type='number' min="1000" max="30000" name='gramosMasa')
+    br
+    br
+    input(id='enviar' type='submit', value='Calcular')
+    br
+    hr
+    
+    table
+        thead
+            tr
+            th Ingredientes para 1800 gramos de masa
+        tbody
+            th Ingrediente
+            th Peso
+            tr
+            td Harina
+            td 1000
+            tr
+            td Agua
+            td 600 
+            tr
+            td Levadura
+            td 50
+            tr
+            td Azucar
+            td 85
+            tr
+            td Manteca
+            td 110
+            tr
+            td Sal
+            td 20

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h3 Tipo de masa
+  h2= data.tiposMasa[0].tipo
+  p Ingredientes para 1 kg Harina:
+
+  ul
+    each val, index in data.tiposMasa[0]
+      li= index + ': ' + val

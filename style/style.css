@@ -1,0 +1,18 @@
+body {
+  margin: 10px !important;
+}
+
+td {
+  border: 1px double #333;
+}
+
+#enviar {
+  color: azure;
+  position: absolute;
+  right: 20%;
+  border-radius: 8px;
+  background-color: cadetblue;
+}
+a {
+  margin-right: 50px;
+}
