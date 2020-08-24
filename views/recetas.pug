@@ -1,10 +1,34 @@
 extends layout
 
 block content
-  h3 Tipo de masa
-  h2= data.tiposMasa[0].tipo
-  p Ingredientes para 1 kg Harina:
+	h3 Tipo de masa
+	h4 Ingredientes para 1 kg Harina:
 
-  ul
-    each val, index in data.tiposMasa[0]
-      li= index + ': ' + val
+	table
+		tbody
+			each val, index in data.tiposMasa[0]
+				tr
+					td= index
+					td= val
+	hr
+	table
+		tbody
+			each val, index in data.tiposMasa[1]
+				tr
+					td= index
+					td= val
+	hr
+	table
+		tbody
+			each val, index in data.tiposMasa[2]
+				tr
+					td= index
+					td= val
+	hr
+	table
+		tbody
+			each val, index in data.tiposMasa[3]
+				tr
+					td= index
+					td= val
+	hr

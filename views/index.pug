@@ -5,19 +5,19 @@ block content
     h3 Ingredietes por Total de masa
     br
     br  
-    form(action="post")
+    form(method="post" action='/')
         label(for='tipoMasa') Elija masa:
-            select#tipoMasa(name='tipoMasa')
-                option(value='viena')= tiposMasa[0].tipo
-                option(value='brioche')= tiposMasa[1].tipo
-                option(value='muffin')= tiposMasa[2].tipo
-                option(value='pizza')= tiposMasa[3].tipo
+            select(name='tipoMasa')
+                option= data.tiposMasa[0].tipo
+                option= data.tiposMasa[1].tipo
+                option= data.tiposMasa[2].tipo
+                option= data.tiposMasa[3].tipo
 
-    label(for='gramosMasa') Gramos de masa:
-    input#fname(type='number' min="1000" max="30000" name='gramosMasa')
-    br
-    br
-    input(id='enviar' type='submit', value='Calcular')
+        label(for='gramosMasa') Gramos de masa:
+        input(type='number' min="1000" max="30000" name='gramosMasa')
+        br
+        br
+        input(id='enviar' type='submit', value='Calcular')
     br
     hr
     
