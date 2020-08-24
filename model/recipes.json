@@ -1,0 +1,37 @@
+[    
+    {
+        "tipo": "viena",
+        "ingredientes": [
+            {"harina": 1000},
+            {"agua": 600},
+            {"levadura": 50},
+            {"azucar": 110},
+            {"manteca": 85},
+            {"sal": 20}
+        ]
+    },
+    {
+        "tipo": "brioche",
+        "ingredientes": [
+            {"harina": 1000},
+            {"agua": 61100},
+            {"levadura": 5110},
+            {"azucar": 11110},
+            {"manteca": 81115},
+            {"sal": 21110}
+        ]
+    },
+    {
+        "tipo": "muffin",
+        "ingredientes": [
+            {"harina": 111000},
+            {"agua": 11100},
+            {"levadura": 11150},
+            {"azucar": 11110},
+            {"manteca": 111185},
+            {"sal": 21110}
+        ]
+    }
+]
+
+

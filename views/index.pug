@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1 Ingredientes    
+    form(action="post")
+        label(for='masa') Elija masa:
+            select#masa(name='tipo masa')
+                option(value='vienna') Vienna
+                option(value='brioche') Brioche
+                option(value='muffin') Muffin
+                option(value='pizza') Pizza
+        br
+        label(for='gramo') Gramos de bollo:
+        input#fname(type='text' name='gramo')
+        br
+        label(for='cantidad') Cantidad de bollo:
+        input#fname(type='text' name='cantidad')
+        br
+        input(type="submit" value="Sumar")
+        input(type="submit" value="Calcular")
