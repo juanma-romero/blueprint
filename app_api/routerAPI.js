@@ -1,7 +1,4 @@
-const express = require('express')
 
-const bodyParser = require('body-parser')
-const app = require('../server')
 
 app.use(express.urlencoded({
   extended: true

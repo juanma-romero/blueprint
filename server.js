@@ -38,16 +38,15 @@ app.post('/', (req, res) => {
   for (var i=0;i<data.tiposMasa.length;i+=1) {
     //console.log(data.tiposMasa[i].tipo);  imprime los tipos de masa en receta
     if (tipoMasa === data.tiposMasa[i].tipo) {
-      const total = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).reduce((t, n) => t + n)
+      const totalMasaReceta = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).reduce((t, n) => t + n)
       //console.log(data.tiposMasa[i]) imprime el objeto de la receta que matchea el post
-      
+      // crea array con valores para cada ingrediente de acuerdo a pedido
+      const arrayVal = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).map(i => (i / totalMasaReceta)*gramosMasa)
+     
     }
   }
-
-
-  
-  
-  res.send(tipoMasa)
+    
+  res.render('index', )
 })
 
 
