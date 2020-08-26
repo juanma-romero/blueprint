@@ -43,6 +43,7 @@ app.post('/', (req, res) => {
       // crea array con valores para cada ingrediente de acuerdo a pedido
       var arrayVal = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).map(i => (i / totalMasaReceta)*gramosMasa)
       var keys = Object.keys(data.tiposMasa[i]).slice(1)
+      //crea objeto desde los array recien creados
       var respObj = {}
       keys.forEach((key, i) => respObj[key] = Math.round(arrayVal[i]));
       
@@ -51,14 +52,12 @@ app.post('/', (req, res) => {
   const respuesta = {
     'masaPedida': tipoMasa,
     'gramosPedido': gramosMasa,
-    'respuesta': respObj
-    
-  }
-  
+    'respuesta': respObj    
+  }  
+
   res.render('complete', respuesta)
 })
 
 
 /* initialize server */
-app.listen(3000)
-console.log('corriendo en 3000')
+app.listen(0, function () { console.log('http://localhost:' + this.address().port); })
