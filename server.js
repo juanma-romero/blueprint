@@ -5,6 +5,7 @@ const ctrlrecetas = require('./control/recetas')
 const morgan = require("morgan")
 const bodyParser = require('body-parser')
 const data = require('./model/recipes.json')
+const PORT = process.env.PORT || 5000;
 
 app.use(express.static('style'))
 /* directory to look for pug files // path.join(__dirname, 'views')  if more folder exist ojo! */
@@ -60,4 +61,4 @@ app.post('/', (req, res) => {
 
 
 /* initialize server */
-app.listen(0, function () { console.log('http://localhost:' + this.address().port); })
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
