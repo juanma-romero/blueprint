@@ -41,12 +41,19 @@ app.post('/', (req, res) => {
       const totalMasaReceta = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).reduce((t, n) => t + n)
       //console.log(data.tiposMasa[i]) imprime el objeto de la receta que matchea el post
       // crea array con valores para cada ingrediente de acuerdo a pedido
-      const arrayVal = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).map(i => (i / totalMasaReceta)*gramosMasa)
-     
+      var arrayVal = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).map(i => (i / totalMasaReceta)*gramosMasa)
+      var keys = Object.keys(data.tiposMasa[i]).slice(1)
     }
   }
+  const respuesta = {
+    'masaPedida': tipoMasa,
+    'gramosPedido': gramosMasa,
+    'nombreIngredientes': keys,     
+    'valoresIngredientes': arrayVal,
     
-  res.render('index', )
+  }
+  
+  res.render('complete', respuesta)
 })
 
 

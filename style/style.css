@@ -16,3 +16,6 @@ td {
 a {
   margin-right: 50px;
 }
+table, ul {
+  display: inline;
+}
