@@ -3,7 +3,7 @@ const app = express()
 const ctrlhome = require('./control/main')
 const ctrlrecetas = require('./control/recetas')
 const morgan = require("morgan")
-const bodyParser = require('body-Parser')
+const bodyParser = require('body-parser')
 const data = require('./model/recipes.json')
 
 app.use(express.static('style'))
