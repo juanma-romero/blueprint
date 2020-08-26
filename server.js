@@ -43,13 +43,15 @@ app.post('/', (req, res) => {
       // crea array con valores para cada ingrediente de acuerdo a pedido
       var arrayVal = Object.values(data.tiposMasa[i]).map(i => parseInt(i)).filter(Boolean).map(i => (i / totalMasaReceta)*gramosMasa)
       var keys = Object.keys(data.tiposMasa[i]).slice(1)
+      var respObj = {}
+      keys.forEach((key, i) => respObj[key] = Math.round(arrayVal[i]));
+      
     }
   }
   const respuesta = {
     'masaPedida': tipoMasa,
     'gramosPedido': gramosMasa,
-    'nombreIngredientes': keys,     
-    'valoresIngredientes': arrayVal,
+    'respuesta': respObj
     
   }
   

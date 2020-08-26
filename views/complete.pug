@@ -7,10 +7,9 @@ block content
             tr
             th 
         tbody
-            th Ingredientes
-            each nom in nombreIngredientes
-              tr
-                td= nom
-            ul  
-              each val in valoresIngredientes
-                li= val
+            th Ingrediente
+            th Peso
+        each key, val in respuesta
+            tr
+            td= key
+            td= val
